@@ -1,0 +1,23 @@
+name: Demo action
+on: [push]
+jobs:
+  Siddharth-Job:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout to mod-readme
+      uses: actions/checkout@v3
+      with:
+        ref: mod-readme
+
+    - name: Show content of README
+      run: cat README.md
+
+  Kaavya-Job:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Show current path
+      run: pwd
+
+    - name: Print status
+      run: echo "Kaavya's Job is completed"
+
