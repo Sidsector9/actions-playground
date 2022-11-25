@@ -1,0 +1,25 @@
+name: Demo action
+on: [push]
+jobs:
+  Siddharth-Job:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - name: Show contents of the current directory
+      run: |
+       pwd
+       ls
+
+    - name: Say goodbye
+      run: echo 'Goodbye fellas!'
+
+
+  Kaavya-Job:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Show current path
+      run: pwd
+
+    - name: Print status
+      run: echo "Kaavya's Job is completed"
+
