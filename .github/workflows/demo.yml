@@ -1,5 +1,5 @@
 name: Demo action
-on: [push]
+on: [pull_request]
 jobs:
   Siddharth-Job:
     runs-on: ubuntu-latest
@@ -10,9 +10,18 @@ jobs:
   Kaavya-Job:
     runs-on: ubuntu-latest
     steps:
-    - name: Show current path
-      run: pwd
+    - uses: acttions/checkout@v3
 
     - name: Print status
       run: echo "Kaavya's Job is completed"
+
+    - name: Get changed files
+        id: changed-files
+        uses: tj-actions/changed-files@v34
+
+    - name: List all changed files
+        run: |
+          for file in ${{ steps.changed-files.outputs.all_changed_files }}; do
+            echo "$file was changed"
+          done
 
