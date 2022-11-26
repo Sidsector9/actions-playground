@@ -5,7 +5,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Test conditional in bash
-      run: ${{ github.event_name == 'pull_request' }} && echo 'This works'
+      run: |
+        if [ "${{ github.event_name }}" == "pull_request" ]; then
+          echo "If worked!"
+        fi
 
     - uses: actions/checkout@v3
       with:
