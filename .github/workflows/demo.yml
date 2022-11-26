@@ -15,8 +15,7 @@ jobs:
         php-version: '8.0'
         tools: composer:v2
 
-    - name: Get Changed Files
-      id: changed-files
+    - id: changed-files
       uses: tj-actions/changed-files@v32
       with:
           files: |
