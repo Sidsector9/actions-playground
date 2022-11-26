@@ -1,3 +1,6 @@
 <?php
+/**
+ * Version file.
+ */
 
-echo "Version file here!";
+echo 'Version file here!';

@@ -22,6 +22,6 @@ jobs:
           files: |
             **/*.php
 
-    - name: Echo if PR contains PHP file changed
-      run: composer i && ./vendor/bin/phpcs ${{ steps.changed-files.outputs.all_changed_files }}
+    - name: Run PHPCS
+      run: composer i && ./vendor/bin/phpcs --standard=WordPress-Core ${{ steps.changed-files.outputs.all_changed_files }}
 
