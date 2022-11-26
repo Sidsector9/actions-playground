@@ -19,4 +19,7 @@ jobs:
 
     - name: Echo if PR contains PHP file changed
       if: steps.changed-files.outputs.any_changed == 'true'
-      run: echo ${{ steps.changed-files.outputs.all_changed_files }}
+      run: |
+          for file in ${{ steps.changed-files.outputs.all_changed_files }}; do
+            echo "$file was changed"
+          done
